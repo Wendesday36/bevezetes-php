@@ -80,11 +80,43 @@
     $tomb2[0] = "Ady Endre";
     $tomb2[1] = "József Attila";
     $tomb3 = ["Milan Kundera", "Hermann Hesse"];
-    $tomb3[]="lev Tolszoj";
+    $tomb3[] = "lev Tolszoj";
     $t = array_merge($tomb2, $tomb3);
-    echo"<br>";
+    echo "<br>";
     print_r($t);
 
+
+
+    for ($i = 0; $i < count($tomb2); $i++) {
+        print_r($tomb2[$i]);
+        echo "<br>";
+    }
+
+    //var_dump($GLOBALS);
+    $x = 5;
+    $y = 10;
+
+    function myTest0()
+    {
+        $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+    }
+
+    echo "<br>";
+    myTest0();
+    echo $y . "<br>";
+
+
+    function MyTest()
+    {
+        static $xx = 0;
+        echo "xx (static) értéke: $xx";
+        $xx++;
+    }
+
+    for ($i = 0; $i < 5; $i++) {
+        MyTest();
+        echo "<br>";
+    }
 
     ?>
 
